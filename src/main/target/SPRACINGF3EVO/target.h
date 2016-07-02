@@ -19,13 +19,9 @@
 
 #define TARGET_BOARD_IDENTIFIER "SPEV"
 
-#define LED0_GPIO   GPIOB
-#define LED0_PIN    Pin_8
-#define LED0_PERIPHERAL RCC_AHBPeriph_GPIOB
+#define LED0                PB8
 
-#define BEEP_GPIO   GPIOC
-#define BEEP_PIN    Pin_15
-#define BEEP_PERIPHERAL RCC_AHBPeriph_GPIOC
+#define BEEPER              PC15
 #define BEEPER_INVERTED
 
 #define USABLE_TIMER_CHANNEL_COUNT 12 // PPM, 8 PWM, UART3 RX/TX, LED Strip
@@ -61,8 +57,6 @@
 #define MAG_AK8963_ALIGN CW90_DEG_FLIP
 
 //#define SONAR
-#define BEEPER
-#define LED0
 
 #define USB_IO
 
@@ -222,8 +216,10 @@
 
 #define USE_SERIAL_4WAY_BLHELI_INTERFACE
 
-#define USED_TIMERS  (TIM_N(1) | TIM_N(2) | TIM_N(3) | TIM_N(8) | TIM_N(15))
+// IO - stm32f303cc in 48pin package
+#define TARGET_IO_PORTA 0xffff
+#define TARGET_IO_PORTB 0xffff
+#define TARGET_IO_PORTC (BIT(13)|BIT(14)|BIT(15))
+#define TARGET_IO_PORTF (BIT(0)|BIT(1)|BIT(3)|BIT(4))
 
-#define TIMER_APB1_PERIPHERALS (RCC_APB1Periph_TIM2 | RCC_APB1Periph_TIM3)
-#define TIMER_APB2_PERIPHERALS (RCC_APB2Periph_TIM1 | RCC_APB2Periph_TIM8 | RCC_APB2Periph_TIM15)
-#define TIMER_AHB_PERIPHERALS (RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB)
+#define USED_TIMERS  (TIM_N(1) | TIM_N(2) | TIM_N(3) | TIM_N(8) | TIM_N(15))
