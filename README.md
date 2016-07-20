@@ -2,7 +2,7 @@
 
 ![INAV](http://static.rcgroups.net/forums/attachments/6/1/0/3/7/6/a9088858-102-inav.png)
 
-Clean-code version of baseflight flight-controller - flight controllers are used to fly multi-rotor craft and fixed wing craft.
+Flight Controller software for STM32 microcontrollers
 
 ## Important: PID values and scaling
 
@@ -14,32 +14,43 @@ Starting at iNav 1.2 release (and current master) INAV uses the same scaling for
 
 ## Features
 
-* Multi-color RGB LED Strip support (each LED can be a different color using variable length WS2811 Addressable RGB strips - use for Orientation Indicators, Low Battery Warning, Flight Mode Status, etc)
-* Oneshot ESC support.
-* Blackbox flight recorder logging (to onboard flash or external SD card).
-* Support for additional targets that use the STM32F3 processors (baseflight only supports STM32F1).
-* Support for the Seriously Pro Racing F3 board (STM32F303, I2C sensors, large flash, excellent I/O.)
-* Support for the TauLabs Sparky board (STM32F303, I2C sensors, based board with acc/gyro/compass and baro, ~$35)
-* Support for the OpenPilot CC3D board. (STM32F103, board, SPI acc/gyro, ~$20)
-* Support for the CJMCU nano quadcopter board.
-* Support for developer breakout boards: (Port103R, EUSTM32F103RC, Olimexino, STM32F3Discovery).
+* Runs on STM32F1 and STM32F3 processors
+* Supported boards:
+    * Naze32/Flip32 (STM32F1, I2C sensors)
+    * Seriously Pro Racing F3 (STM32F303, I2C sensors, large flash, excellent I/O.)
+    * TauLabs Sparky (STM32F303, I2C sensors, based board with acc/gyro/compass and baro)
+    * OpenPilot CC3D (STM32F103, SPI acc/gyro)
+    * Seriously Dodo (STM32F3)
+    * FuryF3 (STM32F3, SPI acc/gyro)
+    * CJMCU nano quadcopter board
+    * Developer breakout boards: (Port103R, EUSTM32F103RC, Olimexino, STM32F3Discovery)
+    * others
+* Advanced GPS and navigation support:
+    * Position Hold
+    * Return To Home with Land
+    * Waypoints
+    * Follow Me mode (compatible Ground Station required)
+    * RTH on Failsafe
 * Support for more than 8 RC channels - (e.g. 16 Channels via FrSky X4RSB SBus).
-* Support for N-Position switches via flexible channel ranges - not just 3 like baseflight or 3/6 in MultiWii
-* Lux's new PID (uses float values internally, resistant to looptime variation).
+* Support for N-Position switches via flexible channel ranges
+* Multi-color RGB LED Strip support (each LED can be a different color using variable length WS2811 Addressable RGB strips - use for Orientation Indicators, Low Battery Warning, Flight Mode Status, etc)
+* Oneshot125 ESC support.
+* Blackbox flight recorder logging (to onboard flash or external SD card)
+* Floating point PID controller
 * Simultaneous Bluetooth configuration and OSD.
-* Better PWM and PPM input and failsafe detection than baseflight.
-* Better FrSky Telemetry than baseflight.
-* LTM Telemetry.
-* Smartport Telemetry.
+* Supported telemetry protocols:
+    * LTM
+    * FrSky Telemetry
+    * SmartPort Telemetry
+    * MAVLink (basic support)
+    * Graupner HoTT telemetry
+* Multiple simultaneous telemetry providers.
 * RSSI via ADC - Uses ADC to read PWM RSSI signals, tested with FrSky D4R-II and X8R.
 * OLED Displays - Display information on: Battery voltage, profile, rate profile, version, sensors, RC, etc.
 * In-flight manual PID tuning and rate adjustment.
 * Rate profiles and in-flight selection of them.
 * Graupner PPM failsafe.
-* Graupner HoTT telemetry.
-* Multiple simultaneous telemetry providers.
 * Configurable serial ports for Serial RX, Telemetry, MSP, GPS - Use most devices on any port, softserial too.
-* And many more minor bug fixes.
 
 For a list of features, changes and some discussion please review the thread on MultiWii forums and consult the documentation.
 
