@@ -6,11 +6,11 @@ Clean-code version of baseflight flight-controller - flight controllers are used
 
 ## Important: PID values and scaling
 
-Starting at 22-06-2016 INAV uses the same scaling for PIDs as Cleanflight/Betaflight LuxFloat and MWRewrite PID controllers. That means the following:
+Starting at iNav 1.2 release (and current master) INAV uses the same scaling for PIDs as Cleanflight/Betaflight LuxFloat and MWRewrite PID controllers. That means the following:
 
 * PIDs from CF/BF can be used in INAV, no need to retune for INAV
 * INAV uses the same PID defaults that Cleanflight and Betaflight
-* Current INAV tunes can be converted to new using [this guide](https://github.com/iNavFlight/inav/wiki/PID-conversion-from-pre-1.2-to-1.2). This applies to all INAV 1.1
+* Current INAV tunes can be converted to new using [this guide](https://github.com/iNavFlight/inav/wiki/PID-conversion-from-pre-1.2-to-1.2). This applies to all INAV 1.1 users
 
 ## Features
 
@@ -69,7 +69,7 @@ Etiquette: Don't ask to ask and please wait around long enough for a reply - som
 ## Configuration Tool
 
 To configure INAV you should use the INAV-configurator GUI tool (Windows/OSX/Linux).
-Currently you have to download the sourcecode and load into Chrome manually from the github page 
+Currently you have to download the sourcecode and load into Chrome manually from the github page
 
 https://github.com/iNavFlight/inav-configurator
 
